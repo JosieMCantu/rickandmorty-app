@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { findCharacters } from '../services/rickAndMortyApi';
-import CharacterList from './characters/CharacterList';
+import CharacterList from '../components/characters/CharacterList';
 
 
 export default class RickandMortyContainer extends Component {
@@ -10,7 +10,9 @@ export default class RickandMortyContainer extends Component {
     }
 
     async componentDidMount() {
+
         const characters = await findCharacters();
+        
         this.setState({
             characters,
             loading: false,

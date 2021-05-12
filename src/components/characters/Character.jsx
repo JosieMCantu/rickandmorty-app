@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Character = ({id, name, status, image}) => (
-    <><Link to={`/:${character.id}`}>
+    <><Link to={`/${id}`}>
     <img src={image} alt={name} />
     <p>{id}</p>
     <p>{name}</p>
