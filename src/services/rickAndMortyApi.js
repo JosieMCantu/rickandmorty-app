@@ -9,3 +9,15 @@ export const findCharacters = async () => {
         image: character.image,
     }));
 };
+
+export const characterById = async (id) => {
+    const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+
+    const { array } = await res.json();
+
+    for(let character of array) {
+        if (character.id === id){
+            return character;
+        }
+    }
+};
